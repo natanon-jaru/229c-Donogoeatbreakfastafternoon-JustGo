@@ -9,6 +9,7 @@ public class MoveObject : MonoBehaviour
     private float speed = 0 ;
     [SerializeField] private List<GameObject> destPos;
     int destIndex = 0;
+    float DistanceBetween;
     
     // Start is called before the first frame update
     void Start()
@@ -20,9 +21,9 @@ public class MoveObject : MonoBehaviour
     void Update()
     {
         Vector3 finalDest = destPos[destIndex].transform.position;
-        float distance = Vector3.Distance(playerRb.transform.position,finalDest);
-
-        if (distance <= 0.5)
+        //float distance = Vector3.Distance(playerRb.transform.position,finalDest);
+        DistanceBetween = Vector3.Distance(playerRb.transform.position,finalDest);
+        if (DistanceBetween <= 0.5)
         {
             speed = 0;
             destIndex++;
@@ -41,6 +42,7 @@ public class MoveObject : MonoBehaviour
 
     void MovePlayer()
     {
+        
         Vector3 nextpos = Vector3.MoveTowards(transform.position,destPos[destIndex].transform.position,speed*Time.deltaTime);
         transform.position = nextpos;
     }
