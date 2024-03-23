@@ -1,13 +1,14 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class MoveObject : MonoBehaviour
 {
-    [SerializeField] private Transform NextPos;
-    [SerializeField]private Rigidbody playerRb,netposRb;
-    private float speed ;
+    [SerializeField]private Rigidbody playerRb;
+    private float speed = 0 ;
     [SerializeField] private List<GameObject> destPos;
+    int destIndex = 0;
     
     // Start is called before the first frame update
     void Start()
@@ -18,27 +19,31 @@ public class MoveObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 direct = playerRb.position - NextPos.position;
-        
-        
-        if (Input.GetMouseButtonDown(0))
+        Vector3 finalDest = destPos[destIndex].transform.position;
+        float distance = Vector3.Distance(playerRb.transform.position,finalDest);
+
+        if (distance <= 0.5)
         {
-            speed = 60;
+            speed = 0;
+            destIndex++;
         }
         else
         {
-            if (direct.Equals(0))
+            if (Input.GetMouseButtonDown(0))
             {
-                speed = 0;
+                speed = 60;
+                
             }
         }
+        
         MovePlayer();
     }
 
     void MovePlayer()
     {
-        Vector3 direc = this.transform.position - NextPos.position;
-        transform.position = Vector3.MoveTowards(transform.position,NextPos.position,speed*Time.deltaTime);
-        
+        Vector3 nextpos = Vector3.MoveTowards(transform.position,destPos[destIndex].transform.position,speed*Time.deltaTime);
+        transform.position = nextpos;
     }
+
+    
 }
