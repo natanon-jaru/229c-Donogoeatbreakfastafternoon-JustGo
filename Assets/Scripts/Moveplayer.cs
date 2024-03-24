@@ -59,5 +59,10 @@ public class Moveplayer : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
+
+        if (other.gameObject.CompareTag("FinishLine"))
+        {
+            SceneManager.LoadScene("Win");
+        }
     }
 }
