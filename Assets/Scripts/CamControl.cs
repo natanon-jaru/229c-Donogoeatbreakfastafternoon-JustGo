@@ -8,12 +8,14 @@ public class CamControl : MonoBehaviour
     [SerializeField] private Camera cam;
 
     [Header("Move")]
-    [SerializeField] private float moveSpeed;
-
-    [SerializeField] private float xInput;
-    [SerializeField] private float zInput;
+    private float moveSpeed;
+    private float xInput;
+    private float zInput;
 
     public static CamControl instance;
+
+    [SerializeField] private Transform corner1;
+    [SerializeField] private Transform corner2;
     
     void Awake()
     {
@@ -34,11 +36,21 @@ public class CamControl : MonoBehaviour
     private void MoveByKB()
     {
         xInput = 0;
-        zInput = Input.GetAxis("Vertical");
+        zInput = Input.GetAxis("Horizontal");
 
         Vector3 dir = (transform.forward * zInput) + (transform.right * xInput);
 
         transform.position += dir * moveSpeed * Time.deltaTime;
+        transform.position = Clamp(corner1.position, corner2.position);
+    }
+
+    private Vector3 Clamp(Vector3 lowerLeft, Vector3 topRight)
+    {
+        Vector3 pos = new Vector3(Mathf.Clamp(transform.position.x, lowerLeft.x, topRight.x),
+            transform.position.y,
+            Mathf.Clamp(transform.position.z, lowerLeft.z, topRight.z));
+
+        return pos;
     }
 
 }
