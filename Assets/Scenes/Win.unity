@@ -434,7 +434,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -2025405086, guid: 1f5dfe5321a93564fb7f701d185cbe7f, type: 3}
+  m_Sprite: {fileID: 1243487283, guid: 1f5dfe5321a93564fb7f701d185cbe7f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1033,7 +1033,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Chacoal Happy!
+  m_text: Charcoal Happy!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 64ed0ef3d9cd0d74193d52e0fed4c822, type: 2}
   m_sharedMaterial: {fileID: -1469061132169523035, guid: 64ed0ef3d9cd0d74193d52e0fed4c822, type: 2}

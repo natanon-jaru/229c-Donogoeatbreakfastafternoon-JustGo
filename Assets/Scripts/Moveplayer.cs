@@ -43,7 +43,7 @@ public class Moveplayer : MonoBehaviour
         // Increment the num
         if (isHolding)
         {
-            acceleration += 0.5f;
+            acceleration += 2f;
         }
         
     }
