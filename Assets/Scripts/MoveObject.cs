@@ -32,7 +32,7 @@ public class MoveObject : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
-                speed = 60;
+                speed = 30;
                 
             }
         }

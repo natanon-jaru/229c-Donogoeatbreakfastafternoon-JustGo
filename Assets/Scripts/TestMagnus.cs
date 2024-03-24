@@ -8,6 +8,9 @@ public class TestMagnus : MonoBehaviour
 
     [SerializeField] private Vector3 velo, angularV;
     [SerializeField] private float force, mass, acceleration;
+
+    private bool isHolding;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -16,25 +19,35 @@ public class TestMagnus : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            acceleration = 250; 
-            force = mass * acceleration;
-            GetComponent<Rigidbody>().AddForce(force,force,0);
+            isHolding = true;
         }
-        
-    }
 
-    void Shoot()
-    {
-        
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            // Perform calculation using the held number when key is released
+            CalculateForce();
+            // Reset the number for next use
+            acceleration = 0f;
+            force = 0f;
+            isHolding = false;
+        }
+
+        // Increment the number while the key is held down
+        if (isHolding)
+        {
+            acceleration += 1f;
+        }
     }
     
     void CalculateForce()
     {
-      
-        
+      force = mass * acceleration;
+      GetComponent<Rigidbody>().AddForce(0,force,force);
+      isHolding = false;
     }
+    
 }
