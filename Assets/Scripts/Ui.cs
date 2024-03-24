@@ -23,13 +23,13 @@ public class Ui : MonoBehaviour
         SceneManager.LoadScene("Game");
     }
 
-    public void Restart()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
-
     public void Menu()
     {
         SceneManager.LoadScene("Menu");
+    }
+    
+    public void Credit()
+    {
+        SceneManager.LoadScene("Credit");
     }
 }

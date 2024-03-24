@@ -13,7 +13,10 @@ public class Moveplayer : MonoBehaviour
 
     [SerializeField] private Scene winS;
     
-    // Start is called before the first frame update
+    private void Awake()
+    {
+        GameManager.score = 0;
+    }
     void Start()
     {
         body = GetComponent<Rigidbody>();
@@ -40,7 +43,7 @@ public class Moveplayer : MonoBehaviour
         // Increment the num
         if (isHolding)
         {
-            acceleration += 1f;
+            acceleration += 0.5f;
         }
         
     }
