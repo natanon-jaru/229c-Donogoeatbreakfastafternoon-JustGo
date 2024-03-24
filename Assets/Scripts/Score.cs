@@ -7,10 +7,9 @@ using Random = System.Random;
 
 public class Score : MonoBehaviour
 {
-    public static int score=0;
-    [SerializeField] private List<GameObject> orbs;
+    //[SerializeField] private List<GameObject> orbs;
 
-    private float time = 30f;
+    //private float time = 10f;
     
     // Start is called before the first frame update
     void Start()
@@ -25,12 +24,18 @@ public class Score : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        score++;
-        Debug.Log(score);
+        GameManager.score++;
+        Debug.Log(GameManager.score);
+        DestroyThis();
        
     }
 
-    private void OnTriggerStay(Collider other)
+    void DestroyThis()
+    {
+            Destroy(this.GameObject());
+    }
+
+    /*private void OnTriggerStay(Collider other)
     {
         Debug.Log("here");
         float f = new Random().Next(20, 50);
@@ -48,7 +53,7 @@ public class Score : MonoBehaviour
             }
             
         }
-    }
+    }*/
     
     
 }

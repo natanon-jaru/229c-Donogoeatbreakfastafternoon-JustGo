@@ -10,6 +10,8 @@ public class Moveplayer : MonoBehaviour
     [SerializeField] private float force, mass, acceleration;
 
     private bool isHolding;
+    private int timeJump;
+    private bool isJumping;
     
     // Start is called before the first frame update
     void Start()
@@ -41,6 +43,7 @@ public class Moveplayer : MonoBehaviour
         {
             acceleration += 1f;
         }
+        
     }
     
     void CalculateForce()
@@ -56,6 +59,5 @@ public class Moveplayer : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
-        
     }
 }
