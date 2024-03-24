@@ -10,8 +10,8 @@ public class Moveplayer : MonoBehaviour
     [SerializeField] private float force, mass, acceleration;
 
     private bool isHolding;
-    private int timeJump;
-    private bool isJumping;
+
+    [SerializeField] private Scene winS;
     
     // Start is called before the first frame update
     void Start()
@@ -30,7 +30,6 @@ public class Moveplayer : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.Space))
         {
-           
             CalculateForce();
             // Reset the num
             acceleration = 0f;
@@ -59,9 +58,13 @@ public class Moveplayer : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
+    }
 
+    private void OnTriggerEnter(Collider other)
+    {
         if (other.gameObject.CompareTag("FinishLine"))
         {
+            //Debug.Log("des");
             SceneManager.LoadScene("Win");
         }
     }
