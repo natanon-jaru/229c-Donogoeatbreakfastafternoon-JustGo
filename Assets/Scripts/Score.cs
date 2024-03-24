@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-using Random = System.Random;
 
 public class Score : MonoBehaviour
 {
@@ -34,26 +33,7 @@ public class Score : MonoBehaviour
     {
             Destroy(this.GameObject());
     }
-
-    /*private void OnTriggerStay(Collider other)
-    {
-        Debug.Log("here");
-        float f = new Random().Next(20, 50);
-        foreach (var all in orbs)
-        {
-            all.GetComponent<Rigidbody>().AddForce(0, f, 0);
-            
-            if (time ==0)
-            {
-                Destroy(all);
-            }
-            else
-            {
-                time-=0.5f;
-            }
-            
-        }
-    }*/
+    
     
     
 }
