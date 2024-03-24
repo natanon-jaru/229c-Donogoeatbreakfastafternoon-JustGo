@@ -4,7 +4,7 @@
             {
                 "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
                 "key": "buildOutputDirList",
-                "value": "{\"m_Value\":\"C:/1650702341-unity-physic/MINI PROJECT/Miniproj_justgo;C:/1650702341-unity-physic/MINI PROJECT/New folder;C:/1650702341-unity-physic/MINI PROJECT/buildmini1;;;;;;;\"}"
+                "value": "{\"m_Value\":\"C:/1650702341-unity-physic/MINI PROJECT/final_mini;C:/1650702341-unity-physic/MINI PROJECT/Justgo_mini;C:/1650702341-unity-physic/MINI PROJECT/Miniproj_justgo;C:/1650702341-unity-physic/MINI PROJECT/New folder;C:/1650702341-unity-physic/MINI PROJECT/buildmini1;;;;;\"}"
             }
         ]
     }
