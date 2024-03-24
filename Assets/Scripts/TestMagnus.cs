@@ -28,15 +28,15 @@ public class TestMagnus : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.Space))
         {
-            // Perform calculation using the held number when key is released
+           
             CalculateForce();
-            // Reset the number for next use
+            // Reset the num
             acceleration = 0f;
             force = 0f;
             isHolding = false;
         }
 
-        // Increment the number while the key is held down
+        // Increment the num
         if (isHolding)
         {
             acceleration += 1f;
